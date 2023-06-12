@@ -1,0 +1,28 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main() {
+    int IstochnikToka = 115;
+    double VResist = 29.7;
+    double resist = 10;
+    long double SilaToka;
+        while (resist < 300) {
+        SilaToka = resist * pow ((IstochnikToka / (resist + VResist)),2) ;
+        cout.precision(4);
+        cout << resist << "\t" << SilaToka << endl;
+        resist += 10;
+        if (resist == 50) {
+            break;
+        }
+    }
+    do {
+        SilaToka = resist * pow ((IstochnikToka / (resist + VResist)),2);
+        cout.precision(4);
+        cout << resist << "\t" << SilaToka << endl;
+        resist += 50;
+    } while (resist <= 300);
+    
+    
+}
